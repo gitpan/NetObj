@@ -1,0 +1,11 @@
+MANIFEST
+Makefile
+Makefile.PL
+NetObj.pm
+NetObj/Block.pm
+NetObj/Request.pm
+NetObj/Server.pm
+README
+TODO
+configure
+NetObj/Config.pm

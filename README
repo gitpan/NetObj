@@ -1,0 +1,47 @@
+NetObject 1.0 alpha 1
+---------------------
+
+This is the first release of NetObject.
+It is a module that allows you to create a TCP based client/server module
+distribution platform.  
+
+INSTALLATION
+------------
+
+	You need the Compiler-Alpha-3 module with the
+	-DINDIRECT_BGET_MACROS definition to make NetObj 
+	run!
+
+	1) Untar and unzip the distribution archive
+	2) type 'perl configure'
+	3) type 'perl Makefile.PL'
+	4) run 'make'
+	5) run 'make install'
+
+
+CREATION OF ASM MODULE FILES
+----------------------------
+
+  To create an asm module is fairly simple.  In the directory in which
+  the foo.pm file lies,  type the following:
+
+	perl -MO=Bytecode,-m,-ofoo.pmb foo.pm
+
+  This will create the foo.pmb bytecompiled module.  You now need to convert
+  this to assembler code. To do so,  use the file 'disassemble' in the
+  Compiler module's directory.  It works like this:
+
+	disassemble foo.pmb > foo.asm
+
+  Then copy the foo.asm file to the directory you specified as the assembler
+  home directory.
+	
+
+USING NETOBJECT
+---------------
+
+See the pod!
+
+Hope you have fun.
+James Duncan
+Mon Feb 17 18:47:00 EST 1997

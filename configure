@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+
+=head1 
+
+ Configure file for NetObject version 1.0
+
+=cut
+
+if ($ARGV[0] eq "f") {
+	&continue();
+} 
+elsif (-e "NetObj/Config.pm") {
+} 
+else {
+	&continue();
+}
+
+sub continue {
+	print "Okay,  this is the first time you're running configure, \nor you're forcing a reconfig.";
+	if($ARGV[0] eq "f") {
+	  print "\nYou *are* forcing a reconfig.  Get it right this time!\n";
+	}
+	my $asm;
+	while($asm eq "") {
+		print "What is your asm module directory? ";
+		chop ($asm = <STDIN>);
+	}
+	mkdir ($asm,666);
+	open(CONFIG, ">NetObj/Config.pm") || die "Cannot open Config file: $!";
+	print CONFIG "package NetObj\:\:Config\n\n";
+	print CONFIG "\$asmdir = \'$asm\'\;";
+	close CONFIG;	
+	open(MANIFEST, ">>MANIFEST");
+	print MANIFEST "NetObj/Config.pm";
+}
+

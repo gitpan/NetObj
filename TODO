@@ -1,0 +1,9 @@
+Mon Feb 17 18:40:22 EST 1997
+
+	1) Allow individual objects to be shared across a network.
+	   * part way done * this should be ready soon.
+
+	2) Safe-itize it.
+
+	3) PGP signed objects.
+
